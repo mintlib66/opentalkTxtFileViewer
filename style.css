@@ -1,0 +1,71 @@
+.fileInput {
+  padding: 1rem;
+}
+
+.viewer {
+  margin: 1rem;
+  background-color: #aae3f1;
+}
+
+.viewer li {
+  list-style-type: none;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.viewer .notice {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.viewer .dateDivision {
+  text-align: center;
+}
+
+.viewer .chatting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.viewer .chatting .pic {
+  width: 50px;
+  height: 50px;
+  background-color: crimson;
+}
+
+.viewer .chatting .name {
+  margin-left: 0.75rem;
+  font-weight: 700;
+}
+
+.viewer .chatting .chat-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.viewer .chatting .chat-box .chat {
+  margin: 0.25rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.viewer .chatting .chat-box .time {
+  font-size: small;
+  color: #555;
+}
+/*# sourceMappingURL=style.css.map */
