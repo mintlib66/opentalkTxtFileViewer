@@ -1,50 +1,121 @@
+// 테마 별 컬러링 변수들
+$themes: (
+  basic: (
+    background-color: #b2c7d9,
+    my-chat-color: #ffea33,
+    other-chat-color: #fff,
+    chat-text-color: #000,
+    chat-timestamp-text-color: #555,
+  ),
+  dark: (
+    background-color: #575757,
+    // notice-color: #91c4cf,
+    my-chat-color: #d6ebec,
+    other-chat-color: #fff,
+    chat-text-color: #000,
+    chat-timestamp-text-color: #666,
+  ),
+);
+
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 14px;
+}
+
+//요소 스타일링
 .fileInput {
   padding: 1rem;
 }
 .viewer {
   margin: 1rem;
-  background-color: rgb(170, 227, 241);
+  background-color: #b2c7d9;
 
-  li {
-    list-style-type: none;
-    padding: 0.5rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  }
-  .notice {
-    text-align: center;
-    padding: 0.5rem;
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  .dateDivision {
-    text-align: center;
-  }
-  .chatting {
-    display: flex;
-    flex-direction: column;
+  //채팅 제목
+  .listTitle {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
 
-    .pic {
-      width: 50px;
-      height: 50px;
-      background-color: crimson;
+    .title {
+      margin: 0.5rem;
+      font-size: 1.5em;
     }
-    .name {
-      margin-left: 0.75rem;
-      font-weight: 700;
+  }
+
+  //채팅 리스트
+  .chatList {
+    margin: 0;
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      padding: 0.5rem;
+      // border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
-    .chat-box {
+    .notice {
+      text-align: center;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem;
+
+      .noticeText {
+        background: rgba(0, 0, 0, 0.06);
+        padding: 0.4rem 1rem;
+        border-radius: 1em;
+
+        .icon-date {
+          margin-right: 0.25rem;
+        }
+      }
+    }
+    .chatting {
       display: flex;
       flex-direction: row;
-      align-items: flex-end;
+      align-items: center;
 
-      .chat {
-        margin: 0.25rem;
-        padding: 0.5rem;
-        background-color: #fff;
-        border-radius: 5px;
+      .pic {
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: #455fa7;
+        border-radius: 1.25em;
+
+        .initial {
+          display: block;
+          width: 3.5rem;
+          height: 3.5rem;
+          text-align: center;
+          line-height: 3.5rem;
+          font-size: 1.25em;
+          color: #fff;
+        }
       }
-      .time {
-        font-size: small;
-        color: #555;
+      .chat-wrap {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0.5rem;
+
+        .name {
+          font-weight: 700;
+          margin-left: 0.25rem;
+        }
+        .chat-box {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-end;
+
+          .bubble {
+            margin: 0.25rem;
+            padding: 0.5rem 0.75rem;
+            background-color: #fff;
+            border-radius: 5px;
+          }
+          .time {
+            width: 5rem;
+            font-size: small;
+            color: #666;
+          }
+        }
       }
     }
   }
