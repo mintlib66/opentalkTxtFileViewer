@@ -71,8 +71,15 @@ html {
     }
     .chatting {
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      width: 100%;
+      justify-content: flex-start;
+
+      .chatting-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
 
       .pic {
         width: 3.5rem;
@@ -116,6 +123,13 @@ html {
             color: #666;
           }
         }
+      }
+    }
+    .chatting.my-chat {
+      justify-content: flex-end;
+
+      .chat-wrap .chat-box .bubble {
+        background-color: #ffea33;
       }
     }
   }

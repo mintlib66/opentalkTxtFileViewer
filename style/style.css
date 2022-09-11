@@ -57,6 +57,16 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.viewer .chatList .chatting .chatting-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -64,6 +74,8 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
 }
 
 .viewer .chatList .chatting .pic {
@@ -123,6 +135,16 @@ html {
   width: 5rem;
   font-size: small;
   color: #666;
+}
+
+.viewer .chatList .chatting.my-chat {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.viewer .chatList .chatting.my-chat .chat-wrap .chat-box .bubble {
+  background-color: #ffea33;
 }
 
 .loading {
