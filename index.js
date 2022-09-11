@@ -1,17 +1,27 @@
 //변수 선언
 const fileInput = document.querySelector('#fileInput')
 const viewer = document.querySelector('.viewer')
+const loading = document.querySelector('.loading')
 const chatList = document.createElement('ul')
 chatList.className = 'chatList'
 
+//로딩 창
+function startLoading() {
+  loading.innerHTML = `<img src="./style/loading-spinner.gif" />`
+}
+function endLoading() {
+  loading.innerHTML = ``
+}
 //파일 불러오기
 async function loadFile() {
   const file = new FileReader()
+
+  initializeChatList()
+  startLoading()
   file.readAsText(this.files[0])
+  endLoading
   file.onload = () => {
-    // console.log('--get text--')
     let textFile = file.result
-    // console.log(textFile);
     makeChatList(textFile)
   }
 }
@@ -27,9 +37,10 @@ function checkNothing(text) {
 //라인 종류 구분 : 채팅방정보, 날짜구분, 공지텍스트, 일반 대화텍스트
 function classifyText(lineText) {}
 
-//로딩 창 띄우기
+function initializeChatList() {
+  viewer.innerHTML = ''
+}
 
-//배열로 담은거 뷰어영역에 엘리먼트로 추가
 function makeChatList(text) {
   const textArr = text.split('\n')
 
@@ -123,11 +134,12 @@ function makeChatList(text) {
 fileInput.addEventListener('change', loadFile)
 
 /*=== to do ===
-1. 닉네임 / 일반 채팅 구분 => 배열이나 오브젝트등에 담아두고 사용
-4. 텍스트 종류 정리(일반챗, 공지, 날짜...)
-2. 날짜 표시 스타일링 
-3. 프사 자리 추가(구글 프로필 기본 이미지처럼 단색배경+첫글자)
-5. 
-5. 채팅 검색 기능 
+1. 닉네임 구분 => 배열이나 오브젝트등에 담아두고 프사/ 채팅형태 나와 타인 형태로 분리
+2. 텍스트 종류 정리(일반챗, 공지, 날짜...) 
+3. 채팅내역이 일정량 이상으로 많을 경우, 사용자 마우스 클릭 시 이후 채팅내역을 추가로 보여주는 기능 
+4. 채팅 검색 기능 
+5.사용방법 안내를 상단에 추가 (최상단에 넣고 아이콘으로 접고 펼치기 되게 하면 좋을듯.) 
+6. 뷰어 바깥 스타일링 
+7. 파일 불러오는 동안 프로그래스 바 표시 
 
 */
