@@ -7,8 +7,54 @@ html {
   font-size: 14px;
 }
 
-.fileInput {
+header {
+  margin: 1rem;
+}
+
+header h2 {
+  padding: 0.5rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+header .tutorial {
+  margin-top: 1rem;
   padding: 1rem;
+  background: #eee;
+}
+
+.fileBox {
+  padding: 1rem;
+}
+
+.fileBox .fileInput {
+  display: none;
+}
+
+.fileBox .file-name {
+  margin-right: 0.5rem;
+  width: 30%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+}
+
+.fileBox .file-label {
+  padding: 0.5rem 1rem;
+  background: #666;
+  color: #fff;
+}
+
+.loading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .viewer {
@@ -147,16 +193,12 @@ html {
   background-color: #ffea33;
 }
 
-.loading {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+footer {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding: 1rem;
+  background: #eee;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

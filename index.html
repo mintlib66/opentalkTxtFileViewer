@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>카카오톡 백업 txt파일 뷰어</title>
+    <title>오픈카톡 백업 txt파일 뷰어</title>
+    <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
     <script
       src="https://kit.fontawesome.com/7161175c87.js"
@@ -12,10 +13,22 @@
     ></script>
   </head>
   <body>
-    <input type="file" accept=".txt" class="fileInput" id="fileInput" />
-    <div class="viewer"></div>
+    <header>
+      <h2>오픈카톡 백업 txt파일 뷰어</h2>
+      <p class="tutorial">
+          카카오톡 백업파일(txt)을 업로드하면 일반 카톡 화면처럼 메시지창의 형태로 볼 수 있습니다.
+      </section>
+    </header>
+    <div class="fileBox">
+      <input type="file" accept=".txt" class="fileInput" id="fileInput" />
+      <input class="file-name" value="선택된 파일 없음" readonly />
+      <label for="fileInput" class="file-label">파일선택</label>
+    </div>
     <div class="loading"></div>
-
+    <section class="viewer"></section>
+    <footer>
+      <p>made by mintlib66</p>
+    </footer>
     <script src="index.js"></script>
   </body>
 </html>
