@@ -1,8 +1,10 @@
 window.onload = () => {
   //변수 선언
   const fileInput = document.querySelector('#fileInput')
+  const fileName = document.querySelector('.file-name')
   const viewer = document.querySelector('.viewer')
   const loading = document.querySelector('.loading')
+
   const chatList = document.createElement('ul')
   const chatInfo = {
     myName: '',
@@ -12,15 +14,20 @@ window.onload = () => {
 
   //파일 불러오기
   async function loadFile() {
-    const file = new FileReader()
+    if (this) {
+      const file = new FileReader()
+      fileName.value = this.value.replace(/c:\\fakepath\\/i, '')
 
-    initializeChatList()
-    startLoading()
-    file.readAsText(this.files[0])
-    endLoading()
-    file.onload = () => {
-      let textFile = file.result
-      makeChatList(textFile)
+      initializeChatList()
+      startLoading()
+      file.readAsText(this.files[0])
+      file.onload = () => {
+        let textFile = file.result
+        makeChatList(textFile)
+        endLoading()
+      }
+    } else {
+      console.log('파일 없음')
     }
   }
   //로딩 바
